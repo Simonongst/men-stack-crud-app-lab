@@ -1,4 +1,4 @@
-const Food = require("./models/food.js");
+const Food = require("../models/food.js");
 
 async function getAllFoods(req, res) {
   const foods = await Food.find();
@@ -23,7 +23,6 @@ async function getFoodById(req, res) {
         res.status(404).send('Food not found');
     }
 }
-
 
 async function updateFood(req, res) {
     const updatedFood = await Food.findByIdAndUpdate(req.params.id, req.body, { new: true });
